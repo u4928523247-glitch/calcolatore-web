@@ -18,7 +18,8 @@ document.getElementById('D').addEventListener('click', () => {
     D_manuale = true;
 });
 document.getElementById('giorni').addEventListener('click', function () {
-    this.value = '';
+    activeInput = this;  // Imposta come campo attivo
+    this.value = '0';    // Azzera il valore
 });
 
 function setActive(inputId) {
