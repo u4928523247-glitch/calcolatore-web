@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💰 Calcolatore Finanziario</title>
+  <meta name="description" content="Calcola il tuo guadagno netto giornaliero e mensile">
+  <link rel="stylesheet" href="style.css" />
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Calcolatore Finanziario</h1>
+    <p class="subtitle">Calcola il tuo guadagno netto in pochi click</p>
+
+    <div class="field">
+      <label>Entrate Giornaliere (lordi)</label>
+      <div class="input-group">
+        <input type="text" id="A" value="0.00" readonly />
+        <span class="unit">€</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Ore Lavorative</label>
+      <select id="ore">
+        <script>
+          for (let i = 1; i <= 24; i++) {
+            document.write(`<option value="${i}">${i}</option>`);
+          }
+        </script>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Guadagno Orario</label>
+      <div class="input-group">
+        <input type="text" id="orario" value="0.00" readonly />
+        <span class="unit">€</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Uscite Percentuali</label>
+      <select id="B">
+        <option>50%</option>
+        <option>60%</option>
+        <option>70%</option>
+        <option>80%</option>
+        <option>90%</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Guadagno Giornaliero (netto)</label>
+      <div class="input-group">
+        <input type="text" id="C" value="0.00" readonly />
+        <span class="unit">€</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Guadagno Mensile</label>
+      <div class="input-group">
+        <input type="text" id="D" value="0.00" readonly />
+        <span class="unit">€</span>
+      </div>
+      <div style="margin-top: 5px; font-size: 0.9em; color: #7f8c8d;">
+        in <input type="text" id="giorni" value="30" size="2" /> gg
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button onclick="aggiorna()">🔄 Aggiorna</button>
+      <button onclick="reset()">🗑️ Reset</button>
+    </div>
+
+    <div class="keyboard">
+      <div class="row">
+        <button onclick="input('7')">7</button>
+        <button onclick="input('8')">8</button>
+        <button onclick="input('9')">9</button>
+      </div>
+      <div class="row">
+        <button onclick="input('4')">4</button>
+        <button onclick="input('5')">5</button>
+        <button onclick="input('6')">6</button>
+      </div>
+      <div class="row">
+        <button onclick="input('1')">1</button>
+        <button onclick="input('2')">2</button>
+        <button onclick="input('3')">3</button>
+      </div>
+      <div class="row">
+        <button onclick="clearInput()" class="red">C</button>
+        <button onclick="input('0')">0</button>
+        <button onclick="backspace()">←</button>
+      </div>
+      <div class="row">
+        <button onclick="input('.')" style="width: 90%;">.</button>
+      </div>
+    </div>
+
+    <p class="footer">© Calcolatore Finanziario - Strumento gratuito per i tuoi calcoli</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
