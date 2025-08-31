@@ -17,9 +17,11 @@ document.getElementById('D').addEventListener('click', () => {
     setActive('D');
     D_manuale = true;
 });
+// Attiva il campo "Giorni" con la tastiera virtuale
 document.getElementById('giorni').addEventListener('click', function () {
     activeInput = this;  // Imposta come campo attivo
-    this.value = '0';    // Azzera il valore
+    if (this.value === '0') return;
+    this.value = '0';    // Azzera al click
 });
 
 function setActive(inputId) {
